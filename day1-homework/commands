@@ -1,0 +1,5 @@
+cd /Users/cmdb/data/rawdata
+cp SRR072893.fastq ~/qbb2017-answers/day1-homework/
+fastqc SRR072893.fastq
+cd ~/data/genomes/
+hisat2 -p 4 -S align_result -x BDGP6 -U ~/qbb2017-answers/day1-homework/SRR072893.fastq
