@@ -5,3 +5,4 @@ cd ~/data/genomes/
 hisat2 -p 4 -S align_result.sam -x BDGP6 -U ~/qbb2017-answers/day1-homework/SRR072893.fastq
 samtools sort -o align_result.bam align_result.sam
 samtools index align_result.bam align_result.index
+stringtie align_result.bam -p 4 -e -G BDGP6.Ensembl.81.gtf -o stringtie_result.gtf -B
