@@ -1,0 +1,17 @@
+# to use parser.py
+
+cat fly.txt | ./parser.py > fly.ctab
+
+# to use mapper.py
+
+# skip the unmatched lines
+./mapper.py -s <mapping ctab file> <stringtie output ctab file>
+
+example: ./mapper.py -s fly.ctab /Users/cmdb/data/results/stringtie/SRR072893/t_data.ctab > fly_with_uniprotID.ctab
+
+# does not skip unmatched lines and fills with "*"
+./mapper.py <mapping file> <stringtie output ctab file>
+
+example: ./mapper.py fly.ctab /Users/cmdb/data/results/stringtie/SRR072893/t_data.ctab > fly_with_uniprotID_noskip.ctab
+
+
