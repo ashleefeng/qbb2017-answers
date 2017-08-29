@@ -1,0 +1,8 @@
+cd /Users/cmdb/data/genomes
+grep -v "^@" align_result.sam | cut -f 3 | sort | uniq -c > a1
+sort -rn a1 | head -n 2 > a2
+cd data/results/
+tar xf SRP004442.stringtie.tar.gz 
+cd stringtie
+grep "FBtr0331261" SRR072*/t_data.ctab | awk '{x += $12} END {print x/NR}'
+grep "FBtr0331261" SRR072*/t_data.ctab | awk '{x += ($12-21.0987) ** 2 } END {print sqrt(x/NR)}' 
