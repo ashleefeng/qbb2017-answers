@@ -46,7 +46,7 @@ xy = np.log(xy + epsilon)
 madf = pd.DataFrame(xy)
 plt.figure()
 
-plt.scatter(madf.mean(axis=0), xy[1] - xy[0])
+plt.scatter(madf.mean(axis=0), xy[1] - xy[0], alpha = 0.1)
 plt.title("MA plot")
 plt.xlabel("A")
 plt.ylabel("M")
