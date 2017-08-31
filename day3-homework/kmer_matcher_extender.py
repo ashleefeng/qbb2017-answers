@@ -55,5 +55,4 @@ for name, pos_list in name2pos.iteritems():
     matches.sort(key=lambda tup: -tup[1])
     
     for (match, length, pos) in matches:
-        if length > 11:
-            print "%s\t%s\t%d" %(name, match, length)
+        print "%s\t%s\t%d" %(name, match, length)
