@@ -42,7 +42,7 @@ plt.close()
 xy = np.ndarray(shape=(2, len(xdf["FPKM"])))
 xy[0] = xdf["FPKM"]
 xy[1] = ydf["FPKM"]
-xy = np.log(xy + epsilon)
+xy = np.log10(xy + epsilon)
 madf = pd.DataFrame(xy)
 plt.figure()
 
