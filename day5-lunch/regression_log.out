@@ -1,0 +1,35 @@
+p values:
+H3K9me3.tab      1.543378e-12
+H3K27me3.tab    1.283667e-161
+H3K4me3.tab     1.331859e-141
+H3K36me3.tab     2.324513e-08
+dtype: float64
+mean of residual squares
+10.0465671312
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   FPKM   R-squared:                       0.730
+Model:                            OLS   Adj. R-squared:                  0.730
+Method:                 Least Squares   F-statistic:                     6467.
+Date:                Fri, 01 Sep 2017   Prob (F-statistic):               0.00
+Time:                        16:59:04   Log-Likelihood:                -18303.
+No. Observations:                9548   AIC:                         3.661e+04
+Df Residuals:                    9544   BIC:                         3.664e+04
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+H3K9me3.tab      0.1056      0.015      7.080      0.000       0.076       0.135
+H3K27me3.tab    -0.3961      0.014    -27.620      0.000      -0.424      -0.368
+H3K4me3.tab      0.2163      0.008     25.767      0.000       0.200       0.233
+H3K36me3.tab     0.0427      0.008      5.591      0.000       0.028       0.058
+==============================================================================
+Omnibus:                      136.552   Durbin-Watson:                   1.587
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              149.396
+Skew:                           0.262   Prob(JB):                     3.62e-33
+Kurtosis:                       3.316   Cond. No.                         8.36
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
