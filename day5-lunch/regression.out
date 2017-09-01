@@ -1,10 +1,16 @@
+p values:
+H3K9me3.tab     1.421545e-03
+H3K27me3.tab    3.015701e-02
+H3K4me3.tab     6.903501e-29
+H3K36me3.tab    3.398470e-04
+dtype: float64
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                   FPKM   R-squared:                       0.008
 Model:                            OLS   Adj. R-squared:                  0.008
 Method:                 Least Squares   F-statistic:                     68.49
 Date:                Fri, 01 Sep 2017   Prob (F-statistic):           7.56e-58
-Time:                        14:45:43   Log-Likelihood:            -2.0524e+05
+Time:                        15:03:39   Log-Likelihood:            -2.0524e+05
 No. Observations:               34718   AIC:                         4.105e+05
 Df Residuals:                   34714   BIC:                         4.105e+05
 Df Model:                           4                                         
@@ -25,8 +31,3 @@ Kurtosis:                    1282.202   Cond. No.                         5.25
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-H3K9me3.tab     0.395522
-H3K27me3.tab    0.339152
-H3K4me3.tab     0.210715
-H3K36me3.tab    0.215201
-dtype: float64

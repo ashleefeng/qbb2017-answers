@@ -59,12 +59,12 @@ plt.xlabel("developmental stage")
 plt.ylabel("mRNA abundance (FPKM)")
 
 fplot, = plt.plot(fpkmsf, color='r')
-mplot, = plt.plot(fpkmsm, 'o', color='g')
+mplot, = plt.plot(fpkmsm, 'o-', color='g')
 fplot2, = plt.plot(range(4, 8), fpkmsf2, color='black')
 mplot2, = plt.plot(range(4, 8), fpkmsm2, 'o', color='blue')
 plt.xticks(range(8),["10", "11", "12", "13", "14A", "14B", "14C", "14D"])
-
-
-plt.legend([fplot, mplot, fplot2, mplot2], ["female", "male", "female replicate", "male replicate"], loc=2)
-plt.savefig("basic.png")
+plt.xlim([-0.5, 7.5])
+plt.ylim([-3, 200])
+plt.legend([fplot, mplot, fplot2, mplot2], ["female", "male", "female replicate", "male replicate"], bbox_to_anchor = (1.5, 0.6), frameon = False, numpoints = 1)
+plt.savefig("basic.png", bbox_inches='tight')
 plt.close()

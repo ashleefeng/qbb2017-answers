@@ -25,11 +25,13 @@ marks = marks.T
 exp = df_exp["FPKM"]
 
 mod = sm.OLS(exp.T, marks)
+# print marks
 marks = sm.add_constant(marks) # not sure why
 res = mod.fit()
+print "p values:"
+print res.pvalues
 
-print(res.summary())
-print res.bse
+print res.summary()
 
 plt.figure()
 
