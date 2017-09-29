@@ -16,9 +16,11 @@ import statsmodels.stats.weightstats as st
 
 # from http://colingorrie.github.io/outlier-detection.html#z-score-method
 def outliers_z_score(ys):
-    threshold = 3
+    # threshold = 3
+    threshold = 0.64
 
-    mean_y = np.mean(ys)
+    # mean_y = np.mean(ys)
+    mean_y = 0
     stdev_y = np.std(ys)
     z_scores = [(y - mean_y) / stdev_y for y in ys]
     return np.where(np.abs(z_scores) > threshold)
@@ -48,6 +50,7 @@ for (nident, nseq), (aident, aseq) in it.izip(nu_reader, aa_reader):
             # print mut[aid]
             
         else:
+            # print len(mut), aid
             refcodon, refaa, dn, ds = mut[aid]
             
             if codon != refcodon:
