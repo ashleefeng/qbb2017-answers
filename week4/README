@@ -1,0 +1,11 @@
+# pca
+plink2 --vcf BYxRM_segs_saccer3.bam.simplified.vcf --id-delim '_'  --out pca --pca 2  --allow-extra-chr --mind
+
+# format phenotype data
+./phenotype_formatter.py BYxRM_PhenoData.txt > BYxRM_PhenoData_final.tsv
+
+# gwas
+plink2 --vcf BYxRM_segs_saccer3.bam.simplified.vcf --allow-extra-chr --pheno BYxRM_PhenoData_final.tsv --all-pheno --assoc --allow-no-sex --out gwas_results
+
+# manhattan plot
+bash gwas.sh
