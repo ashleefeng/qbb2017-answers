@@ -1,0 +1,16 @@
+# build index
+bowtie2-build -c data/chr19.fa chr19_idx
+
+# align to reference genome with bowtie2
+./bt2.sh
+
+./samtools.sh
+
+# call peaks with macs2
+macs2 callpeak -t ./data/CTCF_ER4.fastq.sam.bam -c ./data/input_ER4.fastq.sam.bam -n ER4 --outdir macs2_ER4 -f BAM -g 61e6
+
+# notes
+bedtools getfasta
+
+location description.txt
+mem.html
