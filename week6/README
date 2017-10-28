@@ -1,16 +1,27 @@
 # build index
-bowtie2-build -c data/chr19.fa chr19_idx
+bowtie2-build data/chr19.fa chr19_idx
 
 # align to reference genome with bowtie2
+cd data
 ./bt2.sh
 
-./samtools.sh
-
 # call peaks with macs2
-macs2 callpeak -t ./data/CTCF_ER4.fastq.sam.bam -c ./data/input_ER4.fastq.sam.bam -n ER4 --outdir macs2_ER4 -f BAM -g 61e6
+macs2 callpeak -t ./data/CTCF_ER4.fastq.sam -c ./data/input_ER4.fastq.sam -n ER4 --outdir macs2_ER4 -f SAM -g 61e6
+macs2 callpeak -t ./data/CTCF_G1E.fastq.sam -c ./data/input_G1E.fastq.sam -n G1E --outdir macs2_G1E -f SAM -g 61e6
 
-# notes
-bedtools getfasta
+# gain of peaks
+bedtools subtract -a macs2_ER4/ER4_summits.bed -b macs2_G1E/G1E_summits.bed > gain.bed
+bedtools subtract -b macs2_ER4/ER4_summits.bed -a macs2_G1E/G1E_summits.bed > loss.bed
 
-location description.txt
-mem.html
+wget http://meme-suite.org/meme-software/Databases/motifs/motif_databases.12.15.tgz
+tar -xf motif_databases.12.15.tgz 
+brew install cpanminus; cpanm install XML::Simple
+perl -MCPAN -e 'install XML::Simple'
+export PATH=$PATH:/usr/local/opt/meme/bin
+
+# bed to fasta
+head -n 100 macs2_ER4/ER4_peaks_sorted.narrowPeak > macs2_ER4/ER4_peaks_top100.narrowPeak
+bedtools getfasta -fi data/chr19.fa -bed macs2_ER4/ER4_peaks_top100.narrowPeak > macs2_ER4/ER4_peaks.fa
+
+# meme-chip for motif search
+meme-chip -meme-maxw 20 -o meme_out -meme-p 4 -db motif_databases/JASPAR/JASPAR_CORE_2016.meme macs2_ER4/ER4_peaks.fa

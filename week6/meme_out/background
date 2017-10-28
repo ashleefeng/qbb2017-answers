@@ -1,0 +1,24 @@
+# 1-order Markov frequencies from file meme_out/ER4_peaks.fa
+# seqs: 100    min: 210    max: 540    avg: 324.1    sum: 32414    alph: DNA
+# order 0
+A 2.473e-01
+C 2.527e-01
+G 2.527e-01
+T 2.473e-01
+# order 1
+AA 6.411e-02
+AC 5.478e-02
+AG 8.331e-02
+AT 4.503e-02
+CA 7.795e-02
+CC 7.067e-02
+CG 2.077e-02
+CT 8.331e-02
+GA 6.058e-02
+GC 6.681e-02
+GG 7.067e-02
+GT 5.478e-02
+TA 4.462e-02
+TC 6.058e-02
+TG 7.795e-02
+TT 6.411e-02

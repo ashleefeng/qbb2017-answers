@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<tomtom version="4.11.2" release="Mon Oct 24 12:27:06 2016 -0700">
+  <model>
+    <command_line>tomtom -verbosity 1 -oc meme_out/dreme_tomtom_out -min-overlap 5 -dist pearson -evalue -thresh 1 -no-ssc -bfile meme_out/background meme_out/dreme_out/dreme.xml motif_databases/JASPAR/JASPAR_CORE_2016.meme</command_line>
+    <distance_measure value="pearson"/>
+    <threshold type="evalue">1</threshold>
+    <alphabet name="DNA" like="dna">
+      <letter id="A" symbol="A" complement="T" name="Adenine" colour="CC0000"/>
+      <letter id="C" symbol="C" complement="G" name="Cytosine" colour="0000CC"/>
+      <letter id="G" symbol="G" complement="C" name="Guanine" colour="FFB300"/>
+      <letter id="T" symbol="T" aliases="U" complement="A" name="Thymine" colour="008000"/>
+      <letter id="N" symbol="N" aliases="X." equals="ACGT" name="Any base"/>
+      <letter id="V" symbol="V" equals="ACG" name="Not T"/>
+      <letter id="H" symbol="H" equals="ACT" name="Not G"/>
+      <letter id="D" symbol="D" equals="AGT" name="Not C"/>
+      <letter id="B" symbol="B" equals="CGT" name="Not A"/>
+      <letter id="M" symbol="M" equals="AC" name="Amino"/>
+      <letter id="R" symbol="R" equals="AG" name="Purine"/>
+      <letter id="W" symbol="W" equals="AT" name="Weak"/>
+      <letter id="S" symbol="S" equals="CG" name="Strong"/>
+      <letter id="Y" symbol="Y" equals="CT" name="Pyrimidine"/>
+      <letter id="K" symbol="K" equals="GT" name="Keto"/>
+    </alphabet>
+    <strands>both</strands>
+    <background from="file" A="0.2473" C="0.2527" G="0.2527" T="0.2473" file="meme_out/background"/>
+    <host>BOOTCAMP-16.local</host>
+    <when>Sat Oct 28 15:53:54 2017</when>
+  </model>
+  <query_dbs>
+    <db source="meme_out/dreme_out/dreme.xml" name="dreme" loaded="2" excluded="0" last_mod_date="Sat Oct 28 15:53:44 2017"/>
+  </query_dbs>
+  <target_dbs>
+    <db source="motif_databases/JASPAR/JASPAR_CORE_2016.meme" name="JASPAR CORE 2016" loaded="1082" excluded="0" last_mod_date="Wed Sep 14 14:58:14 2016"/>
+  </target_dbs>
+  <queries>
+    <motif db="0" id="AGRGGGC" alt="DREME" length="7" nsites="38" evalue="3.0e-002">
+      <pos A="0.998024" C="0.000663255" G="0.000663255" T="0.000649081"/>
+      <pos A="0.000649081" C="0.000663255" G="0.998039" T="0.000649081"/>
+      <pos A="0.551831" C="0.000663255" G="0.446857" T="0.000649081"/>
+      <pos A="0.000649081" C="0.000663255" G="0.998039" T="0.000649081"/>
+      <pos A="0.000649081" C="0.000663255" G="0.998039" T="0.000649081"/>
+      <pos A="0.000649081" C="0.000663255" G="0.998039" T="0.000649081"/>
+      <pos A="0.000649081" C="0.998039" G="0.000663255" T="0.000649081"/>
+    </motif>
+    <motif db="0" id="GTGGCS" alt="DREME" length="6" nsites="40" evalue="2.9e-003">
+      <pos A="0.000616708" C="0.000630175" G="0.998136" T="0.000616708"/>
+      <pos A="0.000616708" C="0.000630175" G="0.000630175" T="0.998123"/>
+      <pos A="0.000616708" C="0.000630175" G="0.998136" T="0.000616708"/>
+      <pos A="0.000616708" C="0.000630175" G="0.998136" T="0.000616708"/>
+      <pos A="0.000616708" C="0.998136" G="0.000630175" T="0.000616708"/>
+      <pos A="0.000616708" C="0.42457" G="0.574196" T="0.000616708"/>
+    </motif>
+  </queries>
+  <targets>
+    <motif db="0" id="MA0139.1" alt="CTCF" length="19" nsites="911"
+        url="http://jaspar.genereg.net?ID=MA0139.1&amp;rm=present&amp;collection=CORE">
+      <pos A="0.0953067" C="0.318722" G="0.0832606" T="0.50271"/>
+      <pos A="0.18292" C="0.158827" G="0.453428" T="0.204824"/>
+      <pos A="0.30777" C="0.0536908" G="0.491759" T="0.14678"/>
+      <pos A="0.0613564" C="0.876164" G="0.0230262" T="0.0394528"/>
+      <pos A="0.00878818" C="0.988966" G="2.77357e-05" T="0.0022179"/>
+      <pos A="0.814834" C="0.0142652" G="0.0712139" T="0.0996872"/>
+      <pos A="0.0438343" C="0.578277" G="0.365815" T="0.0120738"/>
+      <pos A="0.117339" C="0.474757" G="0.052654" T="0.355251"/>
+      <pos A="0.933039" C="0.0120874" G="0.0351119" T="0.019762"/>
+      <pos A="0.00551454" C="2.77357e-05" G="0.991137" T="0.00331978"/>
+      <pos A="0.365519" C="0.00332037" G="0.621255" T="0.00990506"/>
+      <pos A="0.0592966" C="0.0131983" G="0.553205" T="0.3743"/>
+      <pos A="0.0132127" C="2.77357e-05" G="0.977942" T="0.00881718"/>
+      <pos A="0.0615584" C="0.00881777" G="0.851582" T="0.0780406"/>
+      <pos A="0.114426" C="0.80632" G="0.00552813" T="0.0737261"/>
+      <pos A="0.409223" C="0.0143272" G="0.557723" T="0.0187271"/>
+      <pos A="0.0903252" C="0.530806" G="0.338097" T="0.0407717"/>
+      <pos A="0.128868" C="0.354615" G="0.0804149" T="0.436102"/>
+      <pos A="0.44271" C="0.199345" G="0.292948" T="0.064998"/>
+    </motif>
+    <motif db="0" id="MA0155.1" alt="INSM1" length="12" nsites="24"
+        url="http://jaspar.genereg.net?ID=MA0155.1&amp;rm=present&amp;collection=CORE">
+      <pos A="0.0425202" C="0.00104855" G="0.167024" T="0.789408"/>
+      <pos A="0.00102614" C="0.00104855" G="0.830924" T="0.167002"/>
+      <pos A="0.00102614" C="0.332998" G="0.12553" T="0.540446"/>
+      <pos A="0.249989" C="0.623455" G="0.00104855" T="0.125507"/>
+      <pos A="0.664927" C="0.00104855" G="0.00104855" T="0.332976"/>
+      <pos A="0.00102614" C="0.00104855" G="0.996899" T="0.00102614"/>
+      <pos A="0.00102614" C="0.0425427" G="0.955405" T="0.00102614"/>
+      <pos A="0.00102614" C="0.00104855" G="0.996899" T="0.00102614"/>
+      <pos A="0.00102614" C="0.00104855" G="0.996899" T="0.00102614"/>
+      <pos A="0.00102614" C="0.0840358" G="0.664949" T="0.249989"/>
+      <pos A="0.125507" C="0.664949" G="0.00104855" T="0.208495"/>
+      <pos A="0.415964" C="0.00104855" G="0.498974" T="0.0840134"/>
+    </motif>
+    <motif db="0" id="MA0333.1" alt="MET31" length="9" nsites="100"
+        url="http://jaspar.genereg.net?ID=MA0333.1&amp;rm=present&amp;collection=CORE">
+      <pos A="0.376109" C="0.0991635" G="0.376115" T="0.148614"/>
+      <pos A="0.204125" C="0.285681" G="0.306069" T="0.204125"/>
+      <pos A="0.138723" C="0.138728" G="0.178292" T="0.544257"/>
+      <pos A="0.000247053" C="0.000252448" G="0.999253" T="0.000247053"/>
+      <pos A="0.000247053" C="0.000252448" G="0.000252448" T="0.999248"/>
+      <pos A="0.000247053" C="0.000252448" G="0.999253" T="0.000247053"/>
+      <pos A="0.000247053" C="0.000252448" G="0.999253" T="0.000247053"/>
+      <pos A="0.000247053" C="0.999253" G="0.000252448" T="0.000247053"/>
+      <pos A="0.101156" C="0.000252448" G="0.696526" T="0.202065"/>
+    </motif>
+    <motif db="0" id="MA0334.1" alt="MET32" length="7" nsites="100"
+        url="http://jaspar.genereg.net?ID=MA0334.1&amp;rm=present&amp;collection=CORE">
+      <pos A="0.339907" C="0.459793" G="0.100153" T="0.100147"/>
+      <pos A="0.110137" C="0.0502025" G="0.769483" T="0.0701771"/>
+      <pos A="0.000247053" C="0.999253" G="0.000252448" T="0.000247053"/>
+      <pos A="0.000247053" C="0.999253" G="0.000252448" T="0.000247053"/>
+      <pos A="0.938703" C="0.0305252" G="0.000252448" T="0.0305198"/>
+      <pos A="0.000247053" C="0.989263" G="0.000252448" T="0.0102371"/>
+      <pos A="0.639608" C="0.150103" G="0.120133" T="0.0901571"/>
+    </motif>
+    <motif db="0" id="MA0373.1" alt="RPN4" length="7" nsites="100"
+        url="http://jaspar.genereg.net?ID=MA0373.1&amp;rm=present&amp;collection=CORE">
+      <pos A="0.232338" C="0.000252448" G="0.676344" T="0.0910652"/>
+      <pos A="0.000247053" C="0.000252448" G="0.999253" T="0.000247053"/>
+      <pos A="0.000247053" C="0.000252448" G="0.120133" T="0.879368"/>
+      <pos A="0.000247053" C="0.000252448" G="0.999253" T="0.000247053"/>
+      <pos A="0.000247053" C="0.000252448" G="0.999253" T="0.000247053"/>
+      <pos A="0.000247053" C="0.999253" G="0.000252448" T="0.000247053"/>
+      <pos A="0.130117" C="0.000252448" G="0.869383" T="0.000247053"/>
+    </motif>
+    <motif db="0" id="MA0443.1" alt="btd" length="10" nsites="30"
+        url="http://jaspar.genereg.net?ID=MA0443.1&amp;rm=present&amp;collection=CORE">
+      <pos A="0.465938" C="0.100507" G="0.233397" T="0.200157"/>
+      <pos A="0.333047" C="0.000839535" G="0.665292" T="0.000821595"/>
+      <pos A="0.133712" C="0.000839535" G="0.598846" T="0.266603"/>
+      <pos A="0.0672671" C="0.000839535" G="0.931072" T="0.000821595"/>
+      <pos A="0.000821595" C="0.000839535" G="0.997517" T="0.000821595"/>
+      <pos A="0.000821595" C="0.000839535" G="0.997517" T="0.000821595"/>
+      <pos A="0.0672671" C="0.931072" G="0.000839535" T="0.000821595"/>
+      <pos A="0.000821595" C="0.000839535" G="0.997517" T="0.000821595"/>
+      <pos A="0.000821595" C="0.000839535" G="0.665292" T="0.333047"/>
+      <pos A="0.49916" C="0.0340618" G="0.333065" T="0.133712"/>
+    </motif>
+  </targets>
+  <matches>
+    <query idx="1">
+      <target idx="4" rc="n" off="1" pv="8.81e-05" ev="9.53e-02" qv="1.87e-01"/>
+      <target idx="2" rc="n" off="3" pv="4.09e-04" ev="4.42e-01" qv="2.94e-01"/>
+      <target idx="3" rc="y" off="1" pv="4.16e-04" ev="4.50e-01" qv="2.94e-01"/>
+    </query>
+    <query idx="0">
+      <target idx="0" rc="n" off="8" pv="1.85e-04" ev="2.00e-01" qv="3.29e-01"/>
+      <target idx="5" rc="n" off="0" pv="3.32e-04" ev="3.60e-01" qv="3.29e-01"/>
+      <target idx="1" rc="n" off="4" pv="4.57e-04" ev="4.95e-01" qv="3.29e-01"/>
+    </query>
+  </matches>
+  <runtime cycles="534991" seconds="0.535"/>
+</tomtom>
