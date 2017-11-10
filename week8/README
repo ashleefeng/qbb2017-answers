@@ -1,0 +1,5 @@
+hifive 5c-complete express -P NORA -C data/Nora_ESC_male_E14.counts data/Nora_Primers.bed
+
+hifive 5c-heatmap Nora.fcp Out_fragment.heat -i Out_fragment.png -d fragment
+
+hifive 5c-heatmap Nora.fcp Out_enrichment.heat -i Out_enrichment.png -d enrichment
