@@ -103,14 +103,24 @@ print "Forward to reverse"
 for i in fwd2revid:
     for j in range(len(primers['start'])):
         if (primers['start'][j] == fwd_ctcf_pos[i][0]) and (fwd_ctcf_pos[i][1] == primers['stop'][j]):
-            name = primers['score'][j]
+            fwd_name = primers['score'][j]
             break
-    print name, fwd_ctcf_pos[i], rev_ctcf_pos[fwd2revid[i]]
+    for j in range(len(primers['start'])):
+        rev_id = fwd2revid[i]
+        if (primers['start'][j] == rev_ctcf_pos[rev_id][0]) and (rev_ctcf_pos[rev_id][1] == primers['stop'][j]):
+            rev_name = primers['score'][j]
+            break
+    print fwd_name, fwd_ctcf_pos[i], rev_name, rev_ctcf_pos[rev_id]
 print "Reverse to forward"
 
 for i in rev2fwdid:
     for j in range(len(primers['start'])):
         if (primers['start'][j] == rev_ctcf_pos[i][0]) and (rev_ctcf_pos[i][1] == primers['stop'][j]):
-            name = primers['score'][j]
+            rev_name = primers['score'][j]
             break
-    print name, rev_ctcf_pos[i], fwd_ctcf_pos[rev2fwdid[i]]
+    for j in range(len(primers['start'])):
+        fwd_id = rev2fwdid[i]
+        if (primers['start'][j] == fwd_ctcf_pos[fwd_id][0]) and (primers['stop'][j] == fwd_ctcf_pos[fwd_id][1]):
+            fwd_name = primers['score'][j]
+            break
+    print rev_name, rev_ctcf_pos[i], fwd_name, fwd_ctcf_pos[rev2fwdid[i]]
