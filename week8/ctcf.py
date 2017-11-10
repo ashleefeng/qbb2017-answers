@@ -6,7 +6,6 @@ import pandas as pd
 
 df = pd.read_csv('data/ctcf_peaks.tsv', '\t')
 primers = pd.read_csv('data/Nora_Primers.bed', '\t')
-print primers
 
 data = np.load('Out_ctcf.npz')
 
