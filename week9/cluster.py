@@ -5,6 +5,7 @@ import scipy.cluster as sc
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.cluster.vq import kmeans, vq
+from scipy import stats
 
 df = pd.read_csv('hema_data.txt', delimiter='\t')
 
@@ -24,7 +25,9 @@ plt.pcolor(ordered_data)
 
 plt.close()
 
-linkage_matrixT = sc.hierarchy.linkage(data.T, method='average')
+# dendrogram
+
+linkage_matrixT = sc.hierarchy.linkage(data.T, method='complete')
 heatmap_orderT = sc.hierarchy.leaves_list(linkage_matrixT)
 col = list(df.columns.values)[1:]
 ordered_col = [col[i] for i in heatmap_orderT]
@@ -35,9 +38,11 @@ den = sc.hierarchy.dendrogram(linkage_matrixT,labels=col)
 
 plt.title('Dendrogram')
 
-# plt.savefig('dendrogram.png')
+# plt.savefig('dendrogram_complete.png')
 
 plt.close()
+ 
+# k-means clustering
 
 centroids,_ = kmeans(data, 6, iter=100)
 idx,_ = vq(data, centroids)
@@ -50,6 +55,25 @@ plt.ylabel('poly')
 plt.title('k-means clustering')
 
 plt.plot(centroids[:,0], centroids[:, 1], 'sk', markersize=8)
-plt.savefig('k-means.png')
+# plt.savefig('k-means.png')
 
+# differential expression
 
+cfu = data[:, 0]
+mys = data[:, 4]
+
+poly = data[:, 1]
+unk = data[:, 2]
+
+early = np.ndarray(shape=(len(data), 2))
+early[:, 0] = cfu
+early[:, 1] = mys
+
+late = np.ndarray(shape=(len(data), 2))
+late[:, 0] = poly
+late[:, 1] = unk
+
+for i in range(len(data)):
+    tstats, p = stats.ttest_rel(early[i, :], late[i, :])
+    if p <= 0.05: 
+        print str(df['gene'][i]) + '\t' +  str(p)
