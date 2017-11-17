@@ -73,7 +73,27 @@ late = np.ndarray(shape=(len(data), 2))
 late[:, 0] = poly
 late[:, 1] = unk
 
+# for i in range(len(data)):
+#     tstats, p = stats.ttest_rel(early[i, :], late[i, :])
+#     if p <= 0.05:
+#        print str(df['gene'][i]) + '\t' +  str(p)
+
+temp_max = 0
+temp_gene = ''
+temp_idx = 0
+
 for i in range(len(data)):
     tstats, p = stats.ttest_rel(early[i, :], late[i, :])
-    if p <= 0.05: 
-        print str(df['gene'][i]) + '\t' +  str(p)
+    early_avg = np.mean(early[i, :])
+    late_avg = np.mean(late[i, :])
+    if (p <= 0.05) and (early_avg < late_avg):
+        curr = late_avg/early_avg
+        if curr > temp_max:
+            temp_idx = i
+            temp_max = curr
+            temp_gene = df['gene'][i]
+
+genes = df['gene'][idx==idx[i]].as_matrix()
+
+for j in genes:
+    print j + ',',
