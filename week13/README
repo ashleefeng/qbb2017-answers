@@ -1,0 +1,9 @@
+cd code
+./step1.sh
+
+# step 2 was skipped
+
+# step 3 bins were assigned by manually looking at KRAKEN output and abundance_table.tab
+# see bin assignments at ../week13_data/abundance_table_assigned.tab
+
+./step4.py ../week13_data/abundance_table_assigned.tab

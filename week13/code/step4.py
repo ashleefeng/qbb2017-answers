@@ -22,12 +22,8 @@ def plot_heatmap(df, title):
     plt.xticks(np.linspace(0.5, 17.5, num = 18))
     ax.set_xticklabels(df.columns, rotation=90)
     plt.yticks(np.linspace(0.5, 7.5, num=8), df.index)
-    # ax.set_yticklabels(df.index)
-    # ax.tick_params(axis='x', tickdir=45)
-    # plt.yticks(range(8), df.index)
     plt.xlabel("Sample")
     plt.ylabel("Predicted taxon")
-    # plt.xticks(np.arange(0.5, df.shape[1], 1), df.columns)
     plt.savefig(title + '.png')
     plt.close
 
