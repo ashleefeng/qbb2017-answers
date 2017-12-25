@@ -7,3 +7,7 @@ cd code
 # see bin assignments at bin_assignments.tsv
 
 ./step4.py ../week13_data/abundance_table_assigned.tab
+
+open abundance.png
+
+open Sorted_abundance.png
