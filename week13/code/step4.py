@@ -15,7 +15,7 @@ filename = sys.argv[1]
 df = pd.read_csv(filename, sep = '\t', index_col = 0)
 
 def plot_heatmap(df, title):
-    fig = plt.figure(figsize=(20, 10))
+    fig = plt.figure(figsize=(25, 10))
     ax = fig.add_subplot(111)
     plt.pcolor(df)
     plt.title(title)
@@ -27,7 +27,7 @@ def plot_heatmap(df, title):
     plt.savefig(title + '.png')
     plt.close
 
-plot_heatmap(df, 'abundance')
+plot_heatmap(df, 'abundance2')
 
 z = linkage(df)
 idx = leaves_list(z)
